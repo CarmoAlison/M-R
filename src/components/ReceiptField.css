@@ -1,0 +1,5 @@
+.receipt-field { display: flex; flex-direction: column; gap: 10px; background: var(--card-raised); }
+.receipt-preview { display: flex; gap: 12px; align-items: flex-start; }
+.receipt-thumb { display: block; width: 96px; height: 96px; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); flex-shrink: 0; }
+.receipt-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.receipt-field .spinner { width: 18px; height: 18px; border-width: 2px; }

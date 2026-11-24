@@ -1,0 +1,13 @@
+.family-house { background: var(--brand-soft); color: var(--brand-strong); }
+
+.invite-code {
+  font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: var(--surface-2);
+  font-size: 0.9rem;
+}
+
+.invite-input { text-transform: uppercase; letter-spacing: 0.2em; font-weight: 800; }

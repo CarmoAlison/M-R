@@ -1,0 +1,61 @@
+/* Modo escuro (opcional, em Configurações). Tons de marrom médio, não preto. */
+[data-theme='dark'] {
+  --brand: #C4A495;
+  --brand-strong: #DDC2B5;
+  --brand-fill: #C4A495;
+  --brand-soft: #4A3E38;
+  --on-brand: #2A221E;
+  --surface-2: #463C37;
+  --bg: #2D2622;
+  --card: #382F2B;
+  --card-raised: #3E3530;
+  --text: #F3ECE6;
+  --text-soft: #C9BBB2;
+  --border: #4B403A;
+  --income: #9DB08C;
+  --income-text: #B5C8A4;
+  --income-soft: #3A4236;
+  --expense: #D69385;
+  --expense-text: #E8A99B;
+  --expense-soft: #4D3A35;
+  --warning: #D9B56E;
+  --warning-text: #E6C88C;
+  --warning-soft: #4A3F2C;
+  --overlay: rgba(20, 15, 12, 0.5);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
+  --shadow-lg: 0 18px 50px rgba(0, 0, 0, 0.4);
+  color-scheme: dark;
+}
+
+/* "Sistema": sem data-theme, segue o aparelho */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --brand: #C4A495;
+    --brand-strong: #DDC2B5;
+    --brand-fill: #C4A495;
+    --brand-soft: #4A3E38;
+    --on-brand: #2A221E;
+    --surface-2: #463C37;
+    --bg: #2D2622;
+    --card: #382F2B;
+    --card-raised: #3E3530;
+    --text: #F3ECE6;
+    --text-soft: #C9BBB2;
+    --border: #4B403A;
+    --income: #9DB08C;
+    --income-text: #B5C8A4;
+    --income-soft: #3A4236;
+    --expense: #D69385;
+    --expense-text: #E8A99B;
+    --expense-soft: #4D3A35;
+    --warning: #D9B56E;
+    --warning-text: #E6C88C;
+    --warning-soft: #4A3F2C;
+    --overlay: rgba(20, 15, 12, 0.5);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+    --shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
+    --shadow-lg: 0 18px 50px rgba(0, 0, 0, 0.4);
+    color-scheme: dark;
+  }
+}

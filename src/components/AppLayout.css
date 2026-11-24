@@ -1,0 +1,30 @@
+.app-shell { min-height: 100dvh; }
+
+.offline-banner {
+  position: sticky;
+  top: 0;
+  z-index: 45;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: calc(6px + var(--safe-t)) 12px 6px;
+  background: var(--warning-soft);
+  color: var(--warning-text);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+.offline-banner.is-syncing { background: var(--brand-soft); color: var(--brand-strong); }
+
+/* ------------------------------------------------ computador */
+@media (min-width: 1024px) {
+  .app-content { margin-left: var(--sidebar-w); }
+  .app-content .page {
+    max-width: 1120px;
+    padding: 32px 40px 48px;
+  }
+  /* páginas de formulário/lista ficam numa coluna confortável */
+  .app-content .page--narrow { max-width: 760px; }
+  .app-content .page--narrow.relatorio { max-width: 920px; }
+  .update-prompt { bottom: 24px; }
+}

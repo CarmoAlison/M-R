@@ -1,0 +1,61 @@
+
+.lanc-grid { display: flex; flex-direction: column; gap: 16px; }
+.lanc-side, .lanc-main { min-width: 0; }
+
+.lanc-tools { display: flex; gap: 8px; align-items: center; }
+
+.search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  min-height: 48px;
+  border-radius: var(--r-input);
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text-soft);
+  transition: box-shadow var(--dur);
+  min-width: 0;
+}
+.search:focus-within { box-shadow: 0 0 0 3px var(--brand-soft); border-color: var(--brand); }
+.search-input { flex: 1; min-width: 0; border: 0; background: transparent; outline: none; min-height: 44px; font-size: 1rem; color: var(--text); }
+
+.filter-btn { position: relative; width: 48px; height: 48px; background: var(--card); border: 1px solid var(--border); }
+.filter-count {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  min-width: 18px;
+  height: 18px;
+  border-radius: var(--r-pill);
+  background: var(--brand-fill);
+  color: var(--on-brand);
+  font-size: 0.68rem;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+}
+
+.view-toggle { display: flex; background: var(--surface-2); border-radius: 14px; padding: 2px; }
+.view-toggle .icon-btn { width: 44px; height: 44px; border-radius: 12px; color: var(--text-soft); }
+.view-toggle .icon-btn[aria-pressed='true'] { background: var(--card); color: var(--brand-strong); box-shadow: var(--shadow-sm); }
+
+.lanc-total { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.lanc-total-value { font-size: 2rem; }
+.lanc-compare { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+/* no celular as metas ficam no Início e na página Metas — a lista vem primeiro */
+.lanc-budgets { display: none; }
+
+.day-group { padding: 10px 12px 4px; }
+.day-header { padding: 2px 4px 4px; }
+.day-header h3 { font-size: 0.9rem; color: var(--text-soft); font-weight: 600; }
+.lanc-hint { text-align: center; }
+
+
+@media (min-width: 1024px) {
+  .lanc-grid { display: grid; grid-template-columns: 340px 1fr; align-items: start; gap: 24px; }
+  .lanc-side { position: sticky; top: 24px; }
+  .lanc-budgets { display: flex; }
+  .lanc-compare { flex-direction: column; align-items: flex-start; }
+}

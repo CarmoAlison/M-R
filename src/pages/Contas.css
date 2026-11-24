@@ -1,0 +1,44 @@
+.total-card { display: flex; flex-direction: column; gap: 2px; }
+.total-value { font-size: 1.8rem; font-weight: 900; }
+
+.account-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 0;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  color: var(--text);
+  transition: transform 140ms var(--ease);
+}
+.account-row:active { transform: scale(0.98); }
+
+.credit-card {
+  --cc: var(--brand);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  min-height: 170px;
+  padding: 20px;
+  border: 0;
+  border-radius: var(--r-card);
+  text-align: left;
+  cursor: pointer;
+  color: var(--on-color);
+  background:
+    radial-gradient(120% 120% at 100% 0%, rgba(255, 255, 255, 0.22) 0%, transparent 55%),
+    linear-gradient(145deg, color-mix(in srgb, var(--cc) 88%, #000) 0%, color-mix(in srgb, var(--cc) 62%, #000) 100%);
+  box-shadow: var(--shadow);
+  transition: transform 160ms var(--ease);
+}
+.credit-card:active { transform: scale(0.98); }
+.credit-card .progress { background: rgba(255, 255, 255, 0.25); }
+.credit-card-value { display: block; font-size: 1.6rem; font-weight: 900; }
+
+
+.invoice-head { display: flex; flex-direction: column; gap: 4px; }
+.credit-card-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 12px; opacity: 0.92; }

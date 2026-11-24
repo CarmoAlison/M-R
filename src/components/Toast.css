@@ -1,0 +1,55 @@
+.toast-stack {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(12px + var(--safe-t));
+  z-index: 100;
+  width: min(calc(100% - 24px), 440px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 10px 12px 16px;
+  border-radius: 18px;
+  background: var(--card-raised);
+  color: var(--text);
+  box-shadow: var(--shadow-lg);
+  font-weight: 700;
+  font-size: 0.92rem;
+  animation: slideUp 260ms var(--ease) both;
+  border-left: 5px solid var(--brand);
+}
+.toast--success { border-left-color: var(--income); }
+.toast--success svg:first-child { color: var(--income-text); }
+.toast--error { border-left-color: var(--expense); }
+.toast--error svg:first-child { color: var(--expense-text); }
+.toast--info svg:first-child { color: var(--brand-strong); }
+
+.toast-action {
+  border: 0;
+  background: var(--brand-soft);
+  color: var(--brand-strong);
+  font-weight: 800;
+  border-radius: 12px;
+  min-height: 36px;
+  padding: 0 12px;
+  cursor: pointer;
+}
+.toast-close {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-soft);
+  cursor: pointer;
+}

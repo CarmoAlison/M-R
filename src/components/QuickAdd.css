@@ -1,0 +1,94 @@
+.qa { display: flex; flex-direction: column; gap: 10px; }
+
+.qa-amount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2.4rem;
+  line-height: 1.1;
+  padding: 0;
+}
+.qa-parts { font-family: var(--font); font-size: 0.85rem; font-weight: 600; color: var(--text-soft); margin-top: 4px; }
+
+.qa-desc { min-height: 42px; padding-top: 8px; padding-bottom: 8px; text-align: center; border-radius: var(--r-pill); }
+
+.qa-chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 2px 20px 4px;
+  margin: 0 -20px;
+  scrollbar-width: none;
+}
+.qa-chips::-webkit-scrollbar { display: none; }
+
+.qa-chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 38px;
+  padding: 0 13px;
+  border-radius: var(--r-pill);
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  font-weight: 600;
+  font-size: 0.88rem;
+  white-space: nowrap;
+  cursor: pointer;
+  flex-shrink: 0;
+  text-decoration: none;
+  transition: background-color 160ms var(--ease), border-color 160ms, color 160ms;
+}
+.qa-chip span { color: var(--text); }
+.qa-chip[aria-checked='true'] span { color: inherit; }
+.qa-chip--plain { color: var(--text-soft); }
+.qa-chip--plain[aria-checked='true'], .qa-chip--plain.is-active {
+  background: var(--brand-fill);
+  border-color: var(--brand-fill);
+  color: var(--on-brand);
+}
+.qa-chip--plain.is-active span { color: var(--on-brand); }
+
+.qa-date input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+}
+
+.qa-hint { text-align: center; margin-top: -4px; }
+
+.qa-more {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 0;
+  background: none;
+  color: var(--brand-strong);
+  font-weight: 700;
+  min-height: 36px;
+  cursor: pointer;
+}
+.qa-more svg { transition: transform var(--dur) var(--ease); }
+
+.qa-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 18px;
+  background: var(--card-raised);
+  border: 1px solid var(--border);
+}
+.qa-file { padding: 0 4px; }
+.qa-save { min-height: 52px; font-size: 1.02rem; }
+
+@media (max-height: 760px) {
+  .qa { gap: 8px; }
+  .qa-amount { font-size: 2.1rem; }
+  .qa-chip { min-height: 34px; }
+  .qa-more { min-height: 28px; }
+}

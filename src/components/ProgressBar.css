@@ -1,0 +1,16 @@
+.progress {
+  width: 100%;
+  border-radius: var(--r-pill);
+  background: var(--surface-2);
+  overflow: hidden;
+}
+.progress-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  transition: width 900ms var(--ease), background-color var(--dur);
+}
+.progress--ok .progress-fill { background: var(--income); }
+.progress--warn .progress-fill { background: var(--warning); }
+.progress--over .progress-fill { background: var(--expense); }
+.progress--brand .progress-fill { background: var(--brand); }

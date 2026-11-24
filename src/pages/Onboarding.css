@@ -1,0 +1,12 @@
+.onboarding { justify-content: flex-start; padding-top: calc(32px + var(--safe-t)); }
+
+.onb-steps { display: flex; gap: 8px; justify-content: center; }
+.onb-step { width: 36px; height: 6px; border-radius: var(--r-pill); background: var(--surface-2); transition: background-color var(--dur) var(--ease); }
+.onb-step.is-done { background: var(--brand); }
+
+.onb-code { text-transform: uppercase; letter-spacing: 0.3em; font-weight: 800; text-align: center; font-size: 1.2rem; }
+
+.onb-cats { display: flex; flex-wrap: wrap; gap: 8px; }
+.onb-cat { min-height: 44px; padding-left: 6px; }
+.onb-cat[aria-pressed='true'] .icon-bubble { background: rgba(255, 255, 255, 0.85) !important; }
+.onb-cat[aria-pressed='false'] { opacity: 0.6; }

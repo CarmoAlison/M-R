@@ -1,0 +1,5 @@
+.mais-profile { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--text); transition: transform 140ms var(--ease); }
+.mais-profile:active { transform: scale(0.98); }
+.mais-profile-link { color: var(--brand-strong); margin-top: 2px; }
+.mais-icon { background: var(--brand-soft); color: var(--brand-strong); }
+.mais-brand { display: flex; justify-content: center; padding: 12px 0 4px; opacity: 0.85; }

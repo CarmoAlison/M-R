@@ -1,0 +1,10 @@
+.config-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  color: var(--brand-strong);
+}
+.config-profile { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--text); }
+.pin-sheet { padding: 8px 0 12px; }
+

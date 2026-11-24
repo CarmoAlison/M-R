@@ -1,0 +1,4 @@
+.rule-card { display: flex; flex-direction: column; gap: 10px; }
+.rule-card.is-paused, .rule-card.is-ended { opacity: 0.75; }
+.rule-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.rule-actions .btn { padding: 0 8px; }

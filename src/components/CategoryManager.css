@@ -1,0 +1,11 @@
+.icon-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); gap: 6px; }
+.icon-choice {
+  display: grid;
+  place-items: center;
+  height: 44px;
+  border-radius: 14px;
+  border: 1.5px solid var(--border);
+  background: var(--card-raised);
+  color: var(--text-soft);
+  cursor: pointer;
+}

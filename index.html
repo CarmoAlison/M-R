@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#F8F5F1" />
+    <meta name="description" content="Controle financeiro da família: ganhos, gastos, cartões, metas e relatórios." />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="M&R Finanças" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/icons/favicon-64.png" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <title>M&R Controle Financeiro</title>
+    <style>
+      /* splash enquanto o JS carrega */
+      #boot { position: fixed; inset: 0; display: grid; place-items: center; background: #F8F5F1; }
+      #boot img { width: min(62vw, 260px); height: auto; animation: boot 1.6s ease-in-out infinite; }
+      #boot .dark { display: none; }
+      @keyframes boot { 50% { opacity: 0.7; transform: scale(0.97); } }
+      @media (prefers-reduced-motion: reduce) { #boot img { animation: none; } }
+    </style>
+  </head>
+  <body>
+    <div id="root"><div id="boot"><div><img class="light" src="/brand/logo.png" alt="M&R Controle Financeiro" /><img class="dark" src="/brand/logo-branca.png" alt="" /></div></div></div>
+    <noscript>Ative o JavaScript para usar o M&R Controle Financeiro.</noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

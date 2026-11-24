@@ -1,0 +1,27 @@
+.amount-pad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.amount-key {
+  min-height: 50px;
+  border: 0;
+  border-radius: 16px;
+  background: var(--surface-2);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform 90ms var(--ease), background-color 140ms;
+  font-variant-numeric: tabular-nums;
+}
+.amount-key:active { transform: scale(0.95); background: var(--brand-soft); }
+.amount-key--soft { background: transparent; }
+.amount-key:disabled { opacity: 0.4; }
+
+@media (max-height: 760px) {
+  .amount-key { min-height: 40px; font-size: 1.2rem; border-radius: 13px; }
+  .amount-pad { gap: 6px; }
+}

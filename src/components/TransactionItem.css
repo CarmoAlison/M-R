@@ -1,0 +1,82 @@
+.tx-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  touch-action: pan-y;
+}
+
+.tx-actions {
+  position: absolute;
+  inset: 0 0 0 auto;
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+}
+.tx-action {
+  flex: 1;
+  border: 0;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.tx-action--edit { background: var(--brand-soft); color: var(--brand-strong); }
+.tx-action--delete { background: var(--expense-soft); color: var(--expense-text); }
+
+.tx-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 4px;
+  min-height: 62px;
+  background: var(--card);
+  transition: transform 260ms var(--ease);
+  user-select: none;
+}
+.is-dragging .tx-content { transition: none; }
+
+.tx-paid {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 160ms var(--ease);
+}
+.tx-paid:active { transform: scale(0.9); }
+.tx-paid.is-paid { background: var(--income-soft); color: var(--income-text); animation: popIn 240ms var(--ease); }
+
+.tx-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  padding: 4px 0;
+  cursor: pointer;
+  min-height: 44px;
+  justify-content: center;
+}
+.tx-title { font-weight: 800; font-size: 0.96rem; max-width: 100%; display: inline-flex; align-items: center; gap: 6px; }
+.tx-badge { flex-shrink: 0; }
+.tx-sub { font-size: 0.8rem; color: var(--text-soft); max-width: 100%; }
+
+.tx-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; }
+.tx-amount { font-weight: 800; font-size: 0.96rem; white-space: nowrap; }
+.tx-meta { display: flex; align-items: center; gap: 6px; color: var(--text-soft); min-height: 20px; }
+.tx-meta .avatar { font-size: 0.6rem; }

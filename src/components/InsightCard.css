@@ -1,0 +1,42 @@
+.insight-carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 78%;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px 16px 10px;
+  margin: 0 -16px;
+  scrollbar-width: none;
+}
+.insight-carousel::-webkit-scrollbar { display: none; }
+@media (min-width: 720px) {
+  .insight-carousel { grid-auto-columns: calc((100% - 12px) / 2); margin: 0; padding: 4px 0 10px; scroll-snap-type: x proximity; }
+}
+.insight-carousel > * { scroll-snap-align: start; animation: slideUp 320ms var(--ease) both; }
+
+.insight-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  border-radius: var(--r-card);
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+.insight-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: var(--brand-soft);
+  color: var(--brand-strong);
+}
+.insight-card--good .insight-icon { background: var(--income-soft); color: var(--income-text); }
+.insight-card--warn .insight-icon { background: var(--warning-soft); color: var(--warning-text); }
+.insight-card--bad .insight-icon { background: var(--expense-soft); color: var(--expense-text); }

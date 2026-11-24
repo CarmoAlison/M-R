@@ -1,0 +1,18 @@
+.closing-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  padding: 20px 16px;
+  border-radius: var(--r-card);
+}
+.closing-hero.is-green { background: var(--income-soft); color: var(--income-text); }
+.closing-hero.is-red { background: var(--expense-soft); color: var(--expense-text); }
+.closing-value { font-size: 2.2rem; }
+
+.closing .card { display: flex; flex-direction: column; gap: 2px; }
+.closing-pos { width: 24px; font-weight: 700; color: var(--text-soft); }
+
+.closing-facts { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.92rem; }
+.closing-facts li { padding: 10px 12px; border-radius: 14px; background: var(--surface-2); display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }

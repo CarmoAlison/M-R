@@ -1,0 +1,89 @@
+.dash-grid { display: flex; flex-direction: column; gap: 16px; }
+.dash-main, .dash-side { min-width: 0; }
+
+/* ---------- card de saldo (claro, elegante) */
+.balance-card { display: flex; flex-direction: column; gap: 10px; padding: 20px; }
+.balance-label { text-transform: uppercase; letter-spacing: 0.06em; }
+.balance-value { font-size: 2.6rem; line-height: 1.05; color: var(--text); }
+
+.balance-split { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.balance-stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: var(--card-raised);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  min-width: 0;
+}
+.balance-stat .strong { font-size: 0.98rem; white-space: nowrap; }
+.balance-stat-icon { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 11px; flex-shrink: 0; }
+.balance-stat-icon.is-income { background: var(--income-soft); color: var(--income-text); }
+.balance-stat-icon.is-expense { background: var(--expense-soft); color: var(--expense-text); }
+.balance-progress { gap: 6px; }
+
+.install-banner { border: 0; cursor: pointer; text-align: left; width: 100%; }
+
+/* ---------- vencimentos */
+.due-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: var(--surface-2);
+  line-height: 1.05;
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.due-date strong { font-size: 1.05rem; }
+.due-date.is-soon { background: var(--warning-soft); color: var(--warning-text); }
+.due-date.is-late { background: var(--expense-soft); color: var(--expense-text); }
+
+/* ---------- coluna lateral */
+.budget-mini, .goal-mini, .invoice-mini {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 4px;
+  text-decoration: none;
+  color: var(--text);
+  border-radius: 14px;
+}
+.budget-mini:hover, .goal-mini:hover, .invoice-mini:hover { background: var(--card-raised); }
+.invoice-mini-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  color: var(--card-color, var(--brand));
+  background: color-mix(in srgb, var(--card-color, var(--brand)) 14%, transparent);
+}
+.invoice-mini .grow { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.goal-empty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1.5px dashed var(--border);
+  color: var(--text-soft);
+  text-decoration: none;
+}
+
+/* ---------- computador: 2 colunas */
+@media (min-width: 1024px) {
+  .dash-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 24px; align-items: start; }
+  .dash-side { position: sticky; top: 24px; }
+  .dash-month { max-width: 360px; }
+  .balance-value { font-size: 3.1rem; }
+}
