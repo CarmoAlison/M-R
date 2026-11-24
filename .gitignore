@@ -28,3 +28,7 @@ dist-ssr
 
 # Vercel
 .vercel
+
+# Supabase CLI (dados locais do link)
+supabase/.temp/
+supabase/.branches/
