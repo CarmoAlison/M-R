@@ -25,7 +25,31 @@
 .balance-stat-icon.is-expense { background: var(--expense-soft); color: var(--expense-text); }
 .balance-progress { gap: 6px; }
 
-.install-banner { border: 0; cursor: pointer; text-align: left; width: 100%; }
+.install-banner { padding: 6px 6px 6px 0; gap: 0; }
+.install-banner-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-align: left;
+  padding: 6px 4px 6px 14px;
+  cursor: pointer;
+  font: inherit;
+  min-width: 0;
+}
+.install-banner-cta {
+  padding: 8px 14px;
+  border-radius: var(--r-pill);
+  background: var(--brand-fill);
+  color: var(--on-brand);
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+.install-banner-close { width: 36px; height: 36px; color: inherit; }
 
 /* ---------- vencimentos */
 .due-date {

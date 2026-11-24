@@ -4,6 +4,7 @@ import Logo from './Logo'
 import Avatar from './Avatar'
 import { SIDEBAR_GROUPS } from './navItems'
 import ThemeToggle from './ThemeToggle'
+import InstallButton from './InstallButton'
 import { useAuth } from '../context/AuthContext'
 import { useHousehold } from '../context/HouseholdContext'
 import './Sidebar.css'
@@ -36,6 +37,7 @@ export default function Sidebar({ onAdd }) {
         ))}
       </nav>
 
+      <InstallButton className="btn btn-sm btn-block sidebar-install" label="Instalar app" iconSize={16} />
       <div className="sidebar-foot">
       <Link to="/perfil" className="sidebar-profile">
         <Avatar id={user?.id} name={profile?.name || user?.email} src={profile?.avatar_url} size={38} />

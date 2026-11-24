@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Bell, ChevronRight, Download, Lock, LogOut, Monitor, Moon, Palette, Smartphone, Sun, Tags } from 'lucide-react'
 import PageHeader from '../components/PageHeader'
 import Avatar from '../components/Avatar'
+import InstallButton from '../components/InstallButton'
 import Sheet from '../components/Sheet'
 import PinPad from '../components/PinPad'
 import CategoryManager from '../components/CategoryManager'
@@ -50,7 +51,7 @@ export default function Config() {
   const lock = useLock()
   const toast = useToast()
   const confirm = useConfirm()
-  const { canInstall, installed, install } = useInstall()
+  const { installed, oneTap } = useInstall()
   const { householdId } = useHousehold()
   const [pinStep, setPinStep] = useState(null) // 'new' | 'confirm'
   const [firstPin, setFirstPin] = useState('')
@@ -222,13 +223,12 @@ export default function Config() {
         <button type="button" className="btn btn-block" onClick={() => setCats(true)}>Gerenciar categorias</button>
       </Section>
 
-      {(canInstall || !installed) && (
+      {!installed && (
         <Section icon={Download} title="Instalar app">
-          {canInstall ? (
-            <button type="button" className="btn btn-primary btn-block" onClick={install}>Instalar na tela inicial</button>
-          ) : (
-            <p className="small muted">Use o menu do navegador → “Instalar app” ou “Adicionar à tela inicial”.</p>
-          )}
+          <p className="small muted">
+            {oneTap ? 'Instale com um toque: o app ganha ícone na tela inicial e abre em tela cheia.' : 'Toque no botão para ver o passo a passo do seu aparelho.'}
+          </p>
+          <InstallButton label="Instalar na tela inicial" />
         </Section>
       )}
 

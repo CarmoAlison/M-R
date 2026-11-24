@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { CalendarClock, ChevronRight, CreditCard, Download, PiggyBank, Plus, TrendingDown, TrendingUp } from 'lucide-react'
+import { CalendarClock, CreditCard, Download, PiggyBank, Plus, TrendingDown, TrendingUp, X } from 'lucide-react'
 import PageHeader from '../components/PageHeader'
 import MonthPicker from '../components/MonthPicker'
 import AnimatedNumber from '../components/AnimatedNumber'
@@ -33,7 +33,8 @@ export default function Dashboard() {
   const { householdId } = useHousehold()
   const data = useData()
   const { month, monthTx, totals: t, prevTotals } = useMonth()
-  const { canInstall, install } = useInstall()
+  const { installed, oneTap, install } = useInstall()
+  const [installDismissed, setInstallDismissed] = useState(() => localStorage.getItem('cf-install-dismissed') === '1')
   const quickAdd = useQuickAdd()
   const editor = useTxEditor()
   const { transactions, categories, budgets, cards, goals, goalEntries, loading } = data
@@ -142,11 +143,28 @@ export default function Dashboard() {
             )}
           </section>
 
-          {canInstall && (
-            <button type="button" className="banner banner--info install-banner no-print" onClick={install}>
-              <Download size={18} /> <span className="grow">Instale o app na tela inicial para abrir mais rápido.</span>
-              <ChevronRight size={18} />
-            </button>
+          {!installed && !installDismissed && (
+            <div className="banner banner--info install-banner no-print">
+              <button type="button" className="install-banner-main" onClick={install}>
+                <Download size={18} />
+                <span className="grow">
+                  <strong className="block">Instale o app no seu {oneTap ? 'aparelho' : 'celular'}</strong>
+                  <span className="tiny">Abre mais rápido, em tela cheia e com notificações.</span>
+                </span>
+                <span className="install-banner-cta">Instalar</span>
+              </button>
+              <button
+                type="button"
+                className="icon-btn install-banner-close"
+                aria-label="Dispensar"
+                onClick={() => {
+                  localStorage.setItem('cf-install-dismissed', '1')
+                  setInstallDismissed(true)
+                }}
+              >
+                <X size={16} />
+              </button>
+            </div>
           )}
 
           {insights.length > 0 && (

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthBrand, PasswordInput } from '../components/AuthBits'
+import InstallButton from '../components/InstallButton'
 import { useAuth } from '../context/AuthContext'
 import { friendlyError } from '../lib/errors'
 
@@ -46,6 +47,7 @@ export default function Login() {
         <span className="muted">
           Ainda não tem conta? <Link to="/cadastro">Criar conta</Link>
         </span>
+        <InstallButton className="btn btn-ghost btn-sm" label="Instalar o app no celular" iconSize={16} />
       </div>
     </div>
   )

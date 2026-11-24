@@ -3,6 +3,7 @@ import { ChevronRight } from 'lucide-react'
 import PageHeader from '../components/PageHeader'
 import Avatar from '../components/Avatar'
 import Logo from '../components/Logo'
+import InstallButton from '../components/InstallButton'
 import { SIDEBAR_GROUPS } from '../components/navItems'
 import { useAuth } from '../context/AuthContext'
 import { useHousehold } from '../context/HouseholdContext'
@@ -37,6 +38,8 @@ export default function Mais() {
         </div>
         <ChevronRight size={18} className="muted" />
       </Link>
+
+      <InstallButton className="btn btn-primary btn-block mais-install" label="Instalar o app no celular" />
 
       {GROUPS.map((g) => (
         <section key={g.title} className="stack-sm">

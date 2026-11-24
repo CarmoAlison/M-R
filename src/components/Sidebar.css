@@ -61,3 +61,4 @@
 .sidebar-foot { display: flex; align-items: center; gap: 6px; }
 .sidebar-foot .sidebar-profile { flex: 1; min-width: 0; }
 .sidebar-theme { border: 1px solid var(--border); border-radius: 14px; height: 60px; width: 48px; }
+.sidebar-install { margin-bottom: -6px; }
